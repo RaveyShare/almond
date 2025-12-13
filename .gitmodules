@@ -1,0 +1,3 @@
+[submodule "apps/almond-front"]
+	path = apps/almond-front
+	url = https://github.com/RaveyShare/almond-front.git
