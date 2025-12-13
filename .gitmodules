@@ -1,3 +1,6 @@
 [submodule "apps/almond-front"]
 	path = apps/almond-front
 	url = https://github.com/RaveyShare/almond-front.git
+[submodule "apps/almond-mina"]
+	path = apps/almond-mina
+	url = /tmp/almond-mina-temp
