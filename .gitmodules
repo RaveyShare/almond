@@ -4,3 +4,9 @@
 [submodule "apps/almond-mina"]
 	path = apps/almond-mina
 	url = https://github.com/RaveyShare/almond-mina.git
+[submodule "services/user-center"]
+	path = services/user-center
+	url = https://github.com/RaveyShare/user-center.git
+[submodule "services/ai-center"]
+	path = services/ai-center
+	url = https://github.com/RaveyShare/ai-center.git
