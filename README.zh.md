@@ -4,6 +4,28 @@
 
 ---
 
+## 📦 仓库结构与子模块
+- 终端应用（`apps/`）
+  - 前端：`apps/almond-front`（Next.js）
+  - 微信小程序：`apps/almond-mina`（子模块；远端：`https://github.com/RaveyShare/almond-mina.git`）
+- 后端与中心服务（`services/`，子模块）
+  - 用户中心：`services/user-center`（Spring Boot；远端：`https://github.com/RaveyShare/user-center.git`）
+  - AI 中心：`services/ai-center`（Python；远端：`https://github.com/RaveyShare/ai-center.git`）
+
+### 子模块初始化
+- 首次拉取后执行：
+  - `git submodule update --init --recursive`
+- 若更新过 `.gitmodules`，同步远端配置：
+  - `git submodule sync --recursive`
+
+### 快速运行（开发）
+- 前端：`cd apps/almond-front && pnpm install && pnpm dev`（或 `npm install && npm run dev`）
+- 小程序：使用微信开发者工具导入 `apps/almond-mina`
+- 用户中心：`cd services/user-center && mvn spring-boot:run`（或 `docker-compose up -d`）
+- AI 中心：`cd services/ai-center && uv run python app/main.py`（或 `docker-compose up -d`）
+
+---
+
 ## 💭 又一次，你在备忘录里写下“我要改变”
 
 然后关掉手机。
@@ -215,4 +237,3 @@
 ---
 
 **用 💚 为每一位想要成长的你而创造**
-

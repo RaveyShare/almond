@@ -8,13 +8,53 @@
 - 目录结构
   - `apps/`：终端应用（前端等）
     - [`apps/almond-front`](apps/almond-front)（Next.js 前端）
+    - [`apps/almond-mina`](apps/almond-mina)（微信小程序，子模块；远端：`https://github.com/RaveyShare/almond-mina.git`）
   - `services/`：后端与中心服务（通过子模块引入）
+    - [`services/user-center`](services/user-center)（用户中心 · Spring Boot，子模块；远端：`https://github.com/RaveyShare/user-center.git`）
+    - [`services/ai-center`](services/ai-center)（AI 中心 · Python，子模块；远端：`https://github.com/RaveyShare/ai-center.git`）
   - `docs/`：架构与部署文档（见下）
 - 文档入口
   - [`docs/architecture.md`](docs/architecture.md)
   - [`docs/services.md`](docs/services.md)
   - [`docs/deploy-guide.md`](docs/deploy-guide.md)
   
+---
+
+## 子模块初始化与更新
+- 初始化与拉取
+  - `git submodule update --init --recursive`
+- 同步远端配置（如 `.gitmodules` 更新后）
+  - `git submodule sync --recursive`
+
+---
+
+## 运行指引（开发环境）
+- 前端 `almond-front`
+  - `cd apps/almond-front`
+  - 包管理任选其一：
+    - `pnpm install && pnpm dev`
+    - 或 `npm install && npm run dev`
+- 微信小程序 `almond-mina`
+  - 使用微信开发者工具导入 `apps/almond-mina` 目录即可运行与预览
+- 用户中心 `user-center`（Java）
+  - `cd services/user-center`
+  - 本地运行：`mvn spring-boot:run`
+  - 或容器化：`docker-compose up -d`
+- AI 中心 `ai-center`（Python）
+  - `cd services/ai-center`
+  - 本地运行（任选其一）：
+    - 使用 `uv`：`uv run python app/main.py`
+    - 使用 `pip`：`pip install -r requirements.txt && python app/main.py`（若仓库提供）
+  - 或容器化：`docker-compose up -d`
+
+---
+
+## 子项目远端
+- 前端：`https://github.com/RaveyShare/almond-front.git`
+- 小程序：`https://github.com/RaveyShare/almond-mina.git`
+- 用户中心：`https://github.com/RaveyShare/user-center.git`
+- AI 中心：`https://github.com/RaveyShare/ai-center.git`
+
 ---
 
 ## 💭 又一次，你在备忘录里写下“我要改变”
