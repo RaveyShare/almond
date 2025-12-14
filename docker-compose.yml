@@ -28,7 +28,7 @@ services:
       - almond_net
 
   nacos:
-    image: nacos/nacos-server:v2.4.2
+    image: nacos/nacos-server:v2.4.3
     container_name: almond-nacos
     environment:
       MODE: standalone
