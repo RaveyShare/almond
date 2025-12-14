@@ -26,12 +26,12 @@
   - 通过 Git Submodule 引入 `foundation` 目录，适合需要二次开发的场景
 
 ## 版本与发布建议
-- BOM 使用正式版（如 `1.0.7`），避免 SNAPSHOT 在业务工程造成解析不稳定
+- BOM 使用正式版（如 `1.0.8`），避免 SNAPSHOT 在业务工程造成解析不稳定
 - 为 `common-starter` 子模块打稳定版号，按需发布到制品库（GitHub Packages 或私有仓库）
 - 业务工程默认依赖发布版；如需本地改动，可 `mvn install` 到本地私库再聚合编译
 
 ## 在本仓库的当前实践
-- 已将 BOM 统一到 `1.0.7` 并本地安装，`user-center`/`mindally-back` 可直接依赖
+- 已将 BOM 统一到 `1.0.8` 并本地安装，`user-center`/`almond-back` 可直接依赖
 - 保留 `common-starter` 全量源码，保证开箱即可构建与调试
 
 ## 迁移到 `/foundation` 的计划（如你同意）
