@@ -10,3 +10,15 @@
 [submodule "services/ai-center"]
 	path = services/ai-center
 	url = https://github.com/RaveyShare/ai-center.git
+[submodule "services/common-dependencies"]
+	path = services/common-dependencies
+	url = git@github.com:RaveyShare/common-dependencies.git
+[submodule "services/common-starter"]
+	path = services/common-starter
+	url = git@github.com:RaveyShare/common-starter.git
+[submodule "foundation/common-dependencies"]
+	path = foundation/common-dependencies
+	url = git@github.com:RaveyShare/common-dependencies.git
+[submodule "foundation/common-starter"]
+	path = foundation/common-starter
+	url = git@github.com:RaveyShare/common-starter.git
