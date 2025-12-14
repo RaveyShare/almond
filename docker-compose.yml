@@ -1,0 +1,62 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8.1
+    container_name: almond-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nacos
+      MYSQL_USER: nacos
+      MYSQL_PASSWORD: nacos
+    command: --default-authentication-plugin=caching_sha2_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./ops/sql/nacos-mysql-init.sql:/docker-entrypoint-initdb.d/nacos-mysql-init.sql:ro
+    networks:
+      - almond_net
+
+  redis:
+    image: redis:7.2
+    container_name: almond-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis_data:/data
+    networks:
+      - almond_net
+
+  nacos:
+    image: nacos/nacos-server:v2.4.2
+    container_name: almond-nacos
+    environment:
+      MODE: standalone
+      SPRING_DATASOURCE_PLATFORM: mysql
+      MYSQL_SERVICE_HOST: mysql
+      MYSQL_SERVICE_PORT: 3306
+      MYSQL_SERVICE_DB_NAME: nacos
+      MYSQL_SERVICE_USER: nacos
+      MYSQL_SERVICE_PASSWORD: nacos
+      MYSQL_SERVICE_DB_PARAM: allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+      NACOS_SERVER_PORT: 8848
+      JVM_XMS: 256m
+      JVM_XMX: 256m
+      JVM_XMN: 128m
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    volumes:
+      - ./nacos_data:/home/nacos/data
+      - ./nacos/conf:/home/nacos/conf
+      - ./nacos_logs:/home/nacos/logs
+    networks:
+      - almond_net
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+networks:
+  almond_net:
+    driver: bridge
