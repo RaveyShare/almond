@@ -16,3 +16,6 @@
 [submodule "foundation/common-starter"]
 	path = foundation/common-starter
 	url = git@github.com:RaveyShare/common-starter.git
+[submodule "services/almond-back"]
+	path = services/almond-back
+	url = https://github.com/RaveyShare/almond-back.git
