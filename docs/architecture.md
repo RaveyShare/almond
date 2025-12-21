@@ -35,7 +35,7 @@
 - 前端：
   - `NEXT_PUBLIC_API_URL=https://almond.ravey.site/api`
   - `NEXT_PUBLIC_USER_CENTER_URL=https://almond.ravey.site`
-  - `NEXT_PUBLIC_MEMBUDDY_BACK_URL=https://almond.ravey.site`
+  - `NEXT_PUBLIC_ALMOND_BACK_URL=https://almond.ravey.site`
 
 ## 开发与提交
 - 子项目开发：在子项目目录正常开发、提交与推送

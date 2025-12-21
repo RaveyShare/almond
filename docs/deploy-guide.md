@@ -8,7 +8,7 @@
 ## 环境变量（前端）
 - `NEXT_PUBLIC_API_URL=https://almond.ravey.site/api`
 - `NEXT_PUBLIC_USER_CENTER_URL=https://almond.ravey.site`
-- `NEXT_PUBLIC_MEMBUDDY_BACK_URL=https://almond.ravey.site`
+- `NEXT_PUBLIC_ALMOND_BACK_URL=https://almond.ravey.site`
 
 ## 构建与发布（前端）
 ```bash
